@@ -121,9 +121,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StudyGroupController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\StudyGroupModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,6 +148,23 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HTML\Cassavin.html" />
+    <Content Include="HTML\Design.css" />
+    <Content Include="HTML\Images\Anthony-Mackie-Captain-America-4.jpeg" />
+    <Content Include="HTML\Images\antman-and-the-wasp-marvel-4.jpeg" />
+    <Content Include="HTML\Images\black-widow-1.jpeg" />
+    <Content Include="HTML\Images\Don-cheadle-as-rhodey-Cropped.jpeg" />
+    <Content Include="HTML\Images\hawkeye.jpeg" />
+    <Content Include="HTML\Images\peter-parker-Cropped.jpeg" />
+    <Content Include="HTML\Images\steve-rogers.jpeg" />
+    <Content Include="HTML\Images\The-Incredible-Hulk.jpeg" />
+    <Content Include="HTML\Images\thor-lightning.jpeg" />
+    <Content Include="HTML\Images\Vision-Civil-War-Cropped.jpeg" />
+    <Content Include="HTML\Images\Wanda-Scarlet-Witch-Cropped.jpeg" />
+    <Content Include="HTML\Kea.html" />
+    <Content Include="HTML\Lwandile.html" />
+    <Content Include="HTML\Mohale.html" />
+    <Content Include="HTML\Wahkeni.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -177,10 +196,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\StudyGroup\ListPeople.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

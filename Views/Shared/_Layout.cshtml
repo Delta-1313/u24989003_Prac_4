@@ -6,6 +6,39 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        /* CSS for dropdown on hover */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-item {
+            padding: 10px 15px;
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+            .dropdown-item:hover {
+                background-color: #f1f1f1;
+            }
+
+        .navbar-nav .nav-item {
+            position: relative;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
@@ -17,13 +50,32 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Simple Starting Sample", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    @*/<li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("List of People", "ListPeople", "People", new { area = "" }, new { @class = "nav-link" })</li>/*@
+
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" role="button">People</a>
+                        <div class="dropdown-menu">
+
+                            <a class="dropdown-item" href="@Url.Action("ListPeople","People")">List of People(Table)</a>
+                            <a class="dropdown-item" href="~/HTML/Cassavin.html">Cassavin</a>
+                            <a class="dropdown-item" href="~/HTML/Kea.html">Kea</a>
+                            <a class="dropdown-item" href="~/HTML/Lwandile.html">Lwandile</a>
+                            <a class="dropdown-item" href="~/HTML/Mohale.html">Mohale</a>
+                            <a class="dropdown-item" href="~/HTML/Wahkeni.html">Wahkeni</a>
+
+                        </div>
+                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -37,3 +89,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+

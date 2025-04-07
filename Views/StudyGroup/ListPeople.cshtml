@@ -1,0 +1,61 @@
+﻿@model IEnumerable<u2498903_Prac_4.Models.StudyGroupModel>
+
+@{
+    ViewBag.Title = "View";
+}
+
+
+<h2>List of people</h2>
+
+<table class="table">
+
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.StudentNum)</th>
+        <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+        <th>@Html.DisplayNameFor(model => model.LastName)</th>
+        <th>@Html.DisplayNameFor(model => model.Email)</th>
+        <th>@Html.DisplayNameFor(model => model.myLink)</th>
+        <th>@Html.DisplayNameFor(model => model.Delete)</th>
+    </tr>
+    @foreach (var item in Model) //for each person
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.StudentNum)</td>
+            <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+            <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+            <td>
+                <a href="@Url.Content(item.myLink)" class="btn btn-primary">LINK</a>
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<script src="~/Scripts/jquery-3.7.0.min.js"></script>
+
+<script>
+    function deleteRow(button) {
+        let row = button.parentNode.parentNode;
+        row.remove();
+    }
+
+    window.onload = function () {
+        const listpeople = document.querySelector("table");
+        const rows = listpeople.querySelectorAll("tr");
+
+        rows.forEach((row, index) => {
+            if (index == 0) return;
+
+            const firstnamecell = row.cells[1];
+
+            if (firstnamecell && firstnamecell.textContent.trim().startsWith("C")) {
+                row.style.color = "red";
+            }
+        });
+    }
+
+</script>
